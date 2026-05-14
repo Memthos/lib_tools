@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.h                                             :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 13:16:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 11:18:42 by mperrine         ###   ########.fr       */
+/*   Created: 2025/10/15 14:41:53 by mperrine          #+#    #+#             */
+/*   Updated: 2026/05/14 11:45:07 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#include "libft.h"
 
-# include "status.h"
-# include "math.h"
-# include "types.h"
-# include "libft.h"
-# include "ft_printf_bonus.h"
-# include "get_next_line.h"
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	void	*mem;
 
-#endif
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+	if (nmemb > (size_t) -1 / size)
+		return (NULL);
+	mem = (void *) malloc(nmemb * size);
+	if (mem == NULL)
+	{
+		use_status(ALLOCATION_FAILURE, 1);
+		return (NULL);
+	}
+	ft_bzero(mem, nmemb * size);
+	return (mem);
+}

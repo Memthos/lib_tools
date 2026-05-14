@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.h                                             :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 13:16:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 11:18:42 by mperrine         ###   ########.fr       */
+/*   Created: 2025/10/13 12:08:17 by mperrine          #+#    #+#             */
+/*   Updated: 2026/05/14 10:50:44 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#include "libft.h"
 
-# include "status.h"
-# include "math.h"
-# include "types.h"
-# include "libft.h"
-# include "ft_printf_bonus.h"
-# include "get_next_line.h"
-
-#endif
+t_status	ft_isalpha(int c)
+{
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (SUCCESS);
+	return (FAILURE);
+}

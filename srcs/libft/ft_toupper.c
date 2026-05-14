@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.h                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 13:16:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 11:18:42 by mperrine         ###   ########.fr       */
+/*   Created: 2025/10/15 01:24:19 by mperrine          #+#    #+#             */
+/*   Updated: 2026/05/14 15:36:20 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#include "libft.h"
 
-# include "status.h"
-# include "math.h"
-# include "types.h"
-# include "libft.h"
-# include "ft_printf_bonus.h"
-# include "get_next_line.h"
-
-#endif
+int	ft_toupper(int c)
+{
+	if (!c)
+		return (0);
+	if (c >= 97 && c <= 122)
+		c -= 32;
+	return (c);
+}

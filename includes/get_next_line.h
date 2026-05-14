@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mperrine <mperrine@student.42angouleme.f>  +#+  +:+       +#+        */
+/*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 16:05:36 by mperrine          #+#    #+#             */
-/*   Updated: 2026/04/18 23:45:13 by memthos          ###   ########.fr       */
+/*   Updated: 2026/05/14 11:19:34 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+# include "status.h"
 # include "libft.h"
+# include "types.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42

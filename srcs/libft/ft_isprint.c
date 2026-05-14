@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.h                                             :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 13:16:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 11:18:42 by mperrine         ###   ########.fr       */
+/*   Created: 2025/10/13 12:21:42 by mperrine          #+#    #+#             */
+/*   Updated: 2026/05/14 10:51:48 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#include "libft.h"
 
-# include "status.h"
-# include "math.h"
-# include "types.h"
-# include "libft.h"
-# include "ft_printf_bonus.h"
-# include "get_next_line.h"
-
-#endif
+t_status	ft_isprint(int c)
+{
+	if (c >= 32 && c <= 126)
+		return (SUCCESS);
+	return (FAILURE);
+}

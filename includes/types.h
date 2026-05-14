@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.h                                             :+:      :+:    :+:   */
+/*   types.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 13:16:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 11:18:42 by mperrine         ###   ########.fr       */
+/*   Created: 2026/05/14 10:19:52 by mperrine          #+#    #+#             */
+/*   Updated: 2026/05/14 11:18:54 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#ifndef TYPES_H
+# define TYPES_H
 
-# include "status.h"
-# include "math.h"
-# include "types.h"
-# include "libft.h"
-# include "ft_printf_bonus.h"
-# include "get_next_line.h"
+typedef unsigned int	t_uint;
+typedef unsigned char	t_uint8;
+typedef char *			t_string;
+typedef char **			t_string_tab;
 
 #endif

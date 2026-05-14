@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 23:33:17 by mperrine          #+#    #+#             */
-/*   Updated: 2026/03/17 10:30:12 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 11:19:27 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@
 # include <unistd.h>
 # include <limits.h>
 
+# include "status.h"
 # include "libft.h"
+# include "types.h"
 
 typedef struct s_flags
 {
@@ -34,10 +36,10 @@ typedef struct s_flags
 
 typedef struct s_ft_printf
 {
-	va_list	*args;
-	size_t	printed;
-	int		res;
-	t_flags	flags;
+	va_list		*args;
+	size_t		printed;
+	t_status	status;
+	t_flags		flags;
 }			t_ft_printf;
 
 int		ft_printf(const char *format, ...);

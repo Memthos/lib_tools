@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.h                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 13:16:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 11:18:42 by mperrine         ###   ########.fr       */
+/*   Created: 2025/09/18 13:57:04 by mperrine          #+#    #+#             */
+/*   Updated: 2026/05/14 12:13:30 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#include "libft.h"
 
-# include "status.h"
-# include "math.h"
-# include "types.h"
-# include "libft.h"
-# include "ft_printf_bonus.h"
-# include "get_next_line.h"
+char	*ft_strdup(const char *s)
+{
+	char	*cpy;
 
-#endif
+	if (!s)
+		return (NULL);
+	cpy = (char *) ft_calloc((ft_strlen(s) + 1), sizeof(char));
+	if (cpy == NULL)
+		return (NULL);
+	ft_strlcpy(cpy, s, ft_strlen(s) + 1);
+	return (cpy);
+}
