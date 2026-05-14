@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 12:15:11 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 10:50:40 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:54:12 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 t_status	ft_isalnum(int c)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122)
-		|| (c >= 48 && c <= 57))
+	if (ft_isalpha(c) == SUCCESS || ft_isdigit(c) == SUCCESS)
 		return (SUCCESS);
 	return (FAILURE);
 }
