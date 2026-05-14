@@ -6,12 +6,14 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 10:19:50 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 16:05:27 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:19:28 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATH_OPS_H
 # define MATH_OPS_H
+
+# include <math.h>
 
 # include "status.h"
 # include "types.h"
@@ -31,6 +33,8 @@ typedef struct s_vec2
 	double	y;
 }			t_vec2;
 
+double	ft_round(double nb, t_uint precision);
+double	deg_to_rad(void);
 t_vec3	vec_add(const t_vec3 v1, const t_vec3 v2, t_status *status);
 t_vec3	vec_sub(const t_vec3 v1, const t_vec3 v2, t_status *status);
 t_vec3	vec_scale(const t_vec3 v1, const double lambda, t_status *status);
