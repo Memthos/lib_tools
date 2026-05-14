@@ -6,12 +6,12 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:16:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 16:08:50 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:22:34 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
+#ifndef LIB_TOOLS_H
+# define LIB_TOOLS_H
 
 # include "status.h"
 # include "math_ops.h"
