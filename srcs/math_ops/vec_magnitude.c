@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:57:44 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 15:57:54 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:20:53 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ double	vec_squared_magnitude(t_vec3 v1, t_status *status)
 	res = v1.x * v1.x + v1.y * v1.y + v1.z * v1.z;
 	if (!isfinite(res))
 	{
-		if (status)
-			*status = OVERFLOW;
+		use_status(OVERFLOW);
 		return (0);
 	}
 	return (res);
@@ -37,8 +36,7 @@ double	vec_magnitude(t_vec3 v1, t_status *status)
 	res = sqrt(squared);
 	if (!isfinite(res))
 	{
-		if (status)
-			*status = OVERFLOW;
+		use_status(OVERFLOW);
 		return (0);
 	}
 	return (res);
