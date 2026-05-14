@@ -2,9 +2,9 @@
 
 ## Description
 
-`libft_tools` is a lighter, optimized version of the libft library. It also includes implementations of `get_next_line` and `ft_printf`.
+`lib_tools` is a personal, optimized version of the libft library. It includes implementations of `get_next_line`, `ft_printf` and also have vectors and matrices operations. There is also a global status variable shared in all the library to check the state of the program being ran.
 
-All functions are compiled into a static library (`libft_tools.a`) which can be used in other projects.
+All functions are compiled into a static library (`lib_tools.a`) which can be used in other projects.
 
 ## Instructions
 
