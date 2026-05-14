@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:16:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 11:18:42 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:03:05 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MAIN_H
 
 # include "status.h"
-# include "math.h"
+# include "math_ops.h"
 # include "types.h"
 # include "libft.h"
 # include "ft_printf_bonus.h"

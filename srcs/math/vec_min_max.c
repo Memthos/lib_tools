@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   status.h                                           :+:      :+:    :+:   */
+/*   vec_min_max.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 11:17:39 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 15:56:24 by mperrine         ###   ########.fr       */
+/*   Created: 2026/05/14 15:55:27 by mperrine          #+#    #+#             */
+/*   Updated: 2026/05/14 15:57:24 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STATUS_H
-# define STATUS_H
+#include "math_ops.h"
 
-# include "types.h"
-
-typedef enum e_status
+double	vec_min(const t_vec3 v1)
 {
-	ERR_GET = -1,
-	SUCCESS,
-	FAILURE,
-	BAD_ARG,
-	TOO_MANY_ARG,
-	NOT_ENOUGH_ARG,
-	OVERFLOW,
-	UNDERFLOW,
-	ZERO_DIVISION,
-	ALLOCATION_FAILURE,
-	OPEN_FAILURE,
-	IS_DIRECTORY,
-	READ_FAILURE,
-	DUP_FAILURE,
-	FILE_NOT_FOUND,
-	PERMISSION_ERROR,
-}	t_status;
+	if (v1.x < v1.y && v1.x < v1.z)
+		return (v1.x);
+	else if (v1.y < v1.x && v1.y < v1.z)
+		return (v1.y);
+	else
+		return (v1.z);
+}
 
-t_status	use_status(t_status status);
-
-#endif
+double	vec_max(const t_vec3 v1)
+{
+	if (v1.x > v1.y && v1.x > v1.z)
+		return (v1.x);
+	else if (v1.y > v1.x && v1.y > v1.z)
+		return (v1.y);
+	else
+		return (v1.z);
+}

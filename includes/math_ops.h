@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   math.h                                             :+:      :+:    :+:   */
+/*   math_ops.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 10:19:50 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 11:19:43 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:05:27 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATH_H
-# define MATH_H
+#ifndef MATH_OPS_H
+# define MATH_OPS_H
 
 # include "status.h"
 # include "types.h"

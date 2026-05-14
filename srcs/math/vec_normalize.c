@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   status.h                                           :+:      :+:    :+:   */
+/*   vec_normalize.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/14 11:17:39 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 15:56:24 by mperrine         ###   ########.fr       */
+/*   Created: 2026/05/14 15:58:06 by mperrine          #+#    #+#             */
+/*   Updated: 2026/05/14 15:58:13 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STATUS_H
-# define STATUS_H
+#include "math_ops.h"
 
-# include "types.h"
-
-typedef enum e_status
+t_vec3	vec_normalize(const t_vec3 v1, t_status *status)
 {
-	ERR_GET = -1,
-	SUCCESS,
-	FAILURE,
-	BAD_ARG,
-	TOO_MANY_ARG,
-	NOT_ENOUGH_ARG,
-	OVERFLOW,
-	UNDERFLOW,
-	ZERO_DIVISION,
-	ALLOCATION_FAILURE,
-	OPEN_FAILURE,
-	IS_DIRECTORY,
-	READ_FAILURE,
-	DUP_FAILURE,
-	FILE_NOT_FOUND,
-	PERMISSION_ERROR,
-}	t_status;
+	double	magnitude;
+	t_vec3	res;
 
-t_status	use_status(t_status status);
-
-#endif
+	magnitude = vec_magnitude(v1, status);
+	if (*status)
+		return ((t_vec3){0.0, 0.0, 0.0});
+	if (magnitude == 0.0)
+	{
+		if (status)
+			*status = ZERO_DIVISION;
+		return ((t_vec3){0.0, 0.0, 0.0});
+	}
+	res = (t_vec3){v1.x / magnitude, v1.y / magnitude, v1.z / magnitude};
+	return (res);
+}
