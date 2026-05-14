@@ -6,15 +6,16 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 11:17:39 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 16:44:35 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:55:29 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STATUS_H
 # define STATUS_H
 
+# include <stdlib.h>
+
 # include "types.h"
-# include "libft.h"
 
 typedef enum e_status
 {
@@ -35,6 +36,8 @@ typedef enum e_status
 	FILE_NOT_FOUND,
 	PERMISSION_ERROR,
 }	t_status;
+
+size_t		ft_strlen(const char *s);
 
 t_status	use_status(t_status status);
 void		print_status(char *prefix);
