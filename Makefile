@@ -15,7 +15,7 @@ SRCS=ft_atoi.c ft_bzero.c ft_calloc.c ft_free_str.c ft_free_tab.c ft_isalnum.c \
 OBJS=$(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
 CC=cc
 CFLAGS=-Wall -Wextra -Werror -I$(HEADERS)
-NAME=libft_tools.a
+NAME=lib_tools.a
 
 all: $(NAME)
 
