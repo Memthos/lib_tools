@@ -1,4 +1,4 @@
-VPATH=srcs:srcs/libft:srcs/ft_printf:srcs/get_next_line:srcs/math
+VPATH=srcs:srcs/libft:srcs/ft_printf:srcs/get_next_line:srcs/math_ops
 OBJS_DIR=objs/
 HEADERS=includes/
 SRCS=ft_atoi.c ft_bzero.c ft_calloc.c ft_free_str.c ft_free_tab.c ft_isalnum.c \
