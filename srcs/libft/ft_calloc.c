@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 14:41:53 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 11:45:07 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 15:49:38 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	mem = (void *) malloc(nmemb * size);
 	if (mem == NULL)
 	{
-		use_status(ALLOCATION_FAILURE, 1);
+		use_status(ALLOCATION_FAILURE);
 		return (NULL);
 	}
 	ft_bzero(mem, nmemb * size);

@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 16:04:35 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 11:31:26 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 15:49:18 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	get_line(char **str, char **buffer, const int break_pos)
 	*str = malloc(sizeof(char) * (break_pos + 1));
 	if (!*str)
 	{
-		use_status(ALLOCATION_FAILURE, 1);
+		use_status(ALLOCATION_FAILURE);
 		return (ALLOCATION_FAILURE);
 	}
 	i = 0;
@@ -34,7 +34,7 @@ int	get_line(char **str, char **buffer, const int break_pos)
 	if (clean_buffer(buffer, *str) != SUCCESS)
 	{
 		ft_free_str(str);
-		use_status(ALLOCATION_FAILURE, 1);
+		use_status(ALLOCATION_FAILURE);
 		return (ALLOCATION_FAILURE);
 	}
 	return (SUCCESS);
@@ -57,14 +57,14 @@ int	read_more(const int fd, char **buffer, int *read_len)
 		if (*read_len == 0 && (*buffer)[0] != '\0')
 			return (SUCCESS);
 		ft_free_str(buffer);
-		use_status(READ_FAILURE, 1);
+		use_status(READ_FAILURE);
 		return (READ_FAILURE);
 	}
 	if (buffer_update(buffer, &read_str, *read_len) == SUCCESS)
 		return (SUCCESS);
 	ft_free_str(buffer);
 	ft_free_str(&read_str);
-	use_status(ALLOCATION_FAILURE, 1);
+	use_status(ALLOCATION_FAILURE);
 	return (ALLOCATION_FAILURE);
 }
 
@@ -76,7 +76,7 @@ int	init_buffer(char **buffer)
 		if (!*buffer)
 		{
 			*buffer = NULL;
-			use_status(ALLOCATION_FAILURE, 1);
+			use_status(ALLOCATION_FAILURE);
 			return (ALLOCATION_FAILURE);
 		}
 		(*buffer)[0] = '\0';
@@ -110,6 +110,5 @@ char	*get_next_line(int fd)
 			break ;
 		}
 	}
-	use_status(SUCCESS, 1);
 	return (str);
 }

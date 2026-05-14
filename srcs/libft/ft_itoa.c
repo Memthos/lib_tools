@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 17:43:24 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 11:46:56 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 15:49:41 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_itoa(int nb)
 	s = (char *) malloc((intlen + 1) * sizeof(char));
 	if (s == NULL)
 	{
-		use_status(ALLOCATION_FAILURE, 1);
+		use_status(ALLOCATION_FAILURE);
 		return (NULL);
 	}
 	s[intlen] = '\0';

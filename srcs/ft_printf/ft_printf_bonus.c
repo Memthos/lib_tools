@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 00:34:05 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 15:38:43 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 15:48:36 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ int	ft_printf(const char *format, ...)
 			ft_putchar(format[i - 1], &data);
 	}
 	va_end(args);
-	use_status(data.status, 1);
+	use_status(data.status);
 	if (data.status != SUCCESS)
 		return (-1);
 	return (data.printed);

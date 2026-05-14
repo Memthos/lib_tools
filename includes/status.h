@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 11:17:39 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 11:20:31 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 15:47:36 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 typedef enum e_status
 {
-	SKIP = -1,
+	ERR_GET = -1,
 	SUCCESS,
 	FAILURE,
 	BAD_ARG,
@@ -35,6 +35,6 @@ typedef enum e_status
 	PERMISSION_ERROR,
 }	t_status;
 
-t_status	use_status(t_status status, int should_set);
+t_status	use_status(t_status status);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 13:17:22 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 12:05:06 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 15:50:19 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		if (use_status(0, 0) != SUCCESS)
+		if (use_status(ERR_GET) != SUCCESS)
 			return ;
 		n *= -1;
 	}
