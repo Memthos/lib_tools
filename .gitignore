@@ -1,4 +1,4 @@
 # Library
-libft_tools.a
+lib_tools.a
 # Object files
 *.o
