@@ -6,13 +6,13 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:57:44 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 16:20:53 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:56:50 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "math_ops.h"
 
-double	vec_squared_magnitude(t_vec3 v1, t_status *status)
+double	vec_squared_magnitude(t_vec3 v1)
 {
 	double	res;
 
@@ -25,13 +25,13 @@ double	vec_squared_magnitude(t_vec3 v1, t_status *status)
 	return (res);
 }
 
-double	vec_magnitude(t_vec3 v1, t_status *status)
+double	vec_magnitude(t_vec3 v1)
 {
 	double	squared;
 	double	res;
 
-	squared = vec_squared_magnitude(v1, status);
-	if (*status)
+	squared = vec_squared_magnitude(v1);
+	if (use_status(ERR_GET) != SUCCESS)
 		return (0);
 	res = sqrt(squared);
 	if (!isfinite(res))

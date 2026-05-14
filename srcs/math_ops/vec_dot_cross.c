@@ -6,13 +6,13 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:01:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 16:20:35 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:56:20 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "math_ops.h"
 
-double	vec_dot(const t_vec3 v1, const t_vec3 v2, t_status *status)
+double	vec_dot(const t_vec3 v1, const t_vec3 v2)
 {
 	double	res;
 
@@ -25,7 +25,7 @@ double	vec_dot(const t_vec3 v1, const t_vec3 v2, t_status *status)
 	return (res);
 }
 
-t_vec3	vec_cross(const t_vec3 v1, const t_vec3 v2, t_status *status)
+t_vec3	vec_cross(const t_vec3 v1, const t_vec3 v2)
 {
 	t_vec3	res;
 

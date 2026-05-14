@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:58:35 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 16:20:17 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 16:56:11 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_vec3	vec_add(const t_vec3 v1, const t_vec3 v2)
 	return (res);
 }
 
-t_vec3	vec_sub(const t_vec3 v1, const t_vec3 v2, t_status *status)
+t_vec3	vec_sub(const t_vec3 v1, const t_vec3 v2)
 {
 	t_vec3	res;
 
@@ -38,7 +38,7 @@ t_vec3	vec_sub(const t_vec3 v1, const t_vec3 v2, t_status *status)
 	return (res);
 }
 
-t_vec3	vec_scale(const t_vec3 v1, const double lambda, t_status *status)
+t_vec3	vec_scale(const t_vec3 v1, const double lambda)
 {
 	t_vec3	res;
 
