@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 11:12:09 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 16:41:06 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/14 17:00:17 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,14 @@ t_status	use_status(t_status status)
 	return (code);
 }
 
-static char	*get_error(t_status status)
+static const char	*get_error(t_status status)
 {
 	const char	*data[] = {"Success", "Failure", "Bad argument",
 		"Too many arguments", "Not enough arguments", "Overflow", "Underflow",
 		"Division by zero", "Allocation failure", "Open failure",
 		"Is a directory", "Read failure", "Dup failure",
 		"No such file or directory", "Permission denied"};
+
 	return (data[status]);
 }
 
@@ -35,7 +36,7 @@ void	print_status(char *prefix)
 {
 	char	*error;
 
-	error = use_status(ERR_GET);
+	error = (char *) get_error(use_status(ERR_GET));
 	if (prefix)
 	{
 		if (write(2, prefix, ft_strlen(prefix)) == -1)
