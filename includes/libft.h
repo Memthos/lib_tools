@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:16:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 15:37:42 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/15 15:27:09 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@
 
 int			ft_atoi(const t_string str);
 long		ft_atol(const t_string str);
-char		*ft_itoa(int n);
 
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t nmemb, size_t size);
+char		*ft_itoa(int n);
+char		**ft_split(const char *s, const char *set);
 char		*ft_strdup(const char *s);
 char		*ft_strjoin_sep(const char *s1, char sep, const char *s2);
 char		*ft_strjoin(char const *s1, char const *s2);
@@ -53,7 +54,6 @@ int			ft_memcmp(const void *s1, const void *s2, size_t n);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
 void		*ft_memmove(void *dest, const void *src, size_t n);
 void		*ft_memset(void *s, int c, size_t n);
-char		**ft_split(char const *s, char c);
 char		*ft_strchr(const char *s, int c);
 int			ft_strcmp(char *s1, char *s2);
 void		ft_striteri(char *s, void (*f)(unsigned int, char *));

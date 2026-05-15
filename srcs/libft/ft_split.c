@@ -6,126 +6,126 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 14:21:42 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 12:08:07 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/15 15:35:07 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_nbrsubs(char const *s, char c)
+static size_t	get_substring_nb(const char *str, const char *set)
 {
-	int	i;
-	int	res;
-	int	b;
+	size_t	count;
+	size_t	i;
 
+	count = 0;
 	i = 0;
-	b = 1;
-	res = 0;
-	while (s[i])
+	if (str[i] && ft_strchr(set, str[i]) == NULL)
+		count++;
+	while (str[i])
 	{
-		if (s[i] == c)
-			b = 1;
-		else if (s[i] != c && b == 1)
+		if (ft_strchr(set, str[i]))
 		{
-			b = 0;
-			res++;
+			while (ft_strchr(set, str[i]))
+				i++;
+			if (str[i])
+				count++;
 		}
-		i++;
+		else
+			i++;
 	}
-	return (res);
+	return (count);
 }
 
-static int	ft_sizesubs(char const *s, char c, int nbsubs)
+static	size_t	get_substr_size(const char *str, const char *set, size_t cur)
 {
-	int	i;
-	int	count;
-	int	size;
+	size_t	count;
+	size_t	size;
+	size_t	i;
 
-	i = 0;
 	count = 0;
 	size = 0;
-	while (s[i])
+	i = 0;
+	if (str[i] && ft_strchr(set, str[i]) == NULL)
+		count++;
+	while (str[i] && size == 0)
 	{
-		if (s[i] != c)
-			size++;
-		if ((s[i] == c || s[i + 1] == '\0') && size > 0)
+		if (count == cur + 1)
+			while (str[i] && ft_strchr(set, str[i++]) == NULL)
+				size++;
+		else if (ft_strchr(set, str[i]))
 		{
-			if (nbsubs <= count)
-			{
-				return (size);
-			}
-			size = 0;
-			count++;
+			while (ft_strchr(set, str[i]))
+				i++;
+			if (str[i])
+				count++;
 		}
-		i++;
+		else
+			i++;
 	}
-	return (0);
+	return (size);
 }
 
-static void	ft_free(char	**subs, int i)
+static void	set_substr(char *sub, const char *str, const char *set, size_t cur)
 {
-	while (i >= 0)
-	{
-		free(subs[i]);
-		i--;
-	}
-	free(subs);
-}
+	size_t	count;
+	size_t	i;
+	size_t	j;
 
-static void	ft_fillsubs(char *subs, char const *s, char c, int nbsubs)
-{
-	int	i;
-	int	j;
-	int	count;
-	int	b;
-
+	count = 0;
 	i = 0;
 	j = 0;
-	count = 0;
-	b = 0;
-	while (s[i])
+	if (str[i] && ft_strchr(set, str[i]) == NULL)
+		count++;
+	while (str[i] && j == 0)
 	{
-		if (s[i] != c)
+		if (count == cur + 1)
+			while (str[i] && ft_strchr(set, str[i]) == NULL)
+				sub[j++] = str[i++];
+		else if (ft_strchr(set, str[i]))
 		{
-			if (count == nbsubs)
-				subs[j++] = s[i];
-			b = 1;
+			while (ft_strchr(set, str[i]))
+				i++;
+			if (str[i])
+				count++;
 		}
-		if (s[i] == c && b == 1)
-		{
-			b = 0;
-			count++;
-		}
-		i++;
+		else
+			i++;
 	}
-	return ;
 }
 
-char	**ft_split(char const *s, char c)
+static void	free_to_index(char **split, size_t goal)
 {
-	char	**substrings;
-	int		i;
-	int		nbsubs;
+	size_t	i;
 
-	if (s == NULL || s[0] == '\0')
-		return (NULL);
-	nbsubs = ft_nbrsubs(s, c);
-	substrings = (char **) ft_calloc(nbsubs + 1, sizeof(char *));
-	if (substrings == NULL)
-		return (NULL);
-	substrings[nbsubs] = NULL;
 	i = 0;
-	while (i < nbsubs)
+	while (i < goal)
+		free(split[i++]);
+	free(split);
+}
+#include <stdio.h>
+char	**ft_split(const char *str, const char *set)
+{
+	char	**split;
+	size_t	nb_substrings;
+	size_t	i;
+
+	if (!str || !*str || !set)
+		return (NULL);
+	nb_substrings = get_substring_nb(str, set);
+	split = ft_calloc(nb_substrings + 1, sizeof(char **));
+	if (split == NULL)
+		return (NULL);
+	i = 0;
+	while (i < nb_substrings)
 	{
-		substrings[i] = ft_calloc((ft_sizesubs(s, c, i) + 1), sizeof(char));
-		if (substrings[i] == NULL)
+		split[i] = ft_calloc(get_substr_size(str, set, i), sizeof(char *));
+		if (!split[i])
 		{
-			ft_free(substrings, i - 1);
+			free_to_index(split, i);
 			return (NULL);
 		}
-		substrings[i][ft_sizesubs(s, c, i)] = '\0';
-		ft_fillsubs(substrings[i], s, c, i);
+		set_substr(split[i], str, set, i);
 		i++;
 	}
-	return (substrings);
+	return (split);
 }
