@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 01:32:56 by mperrine          #+#    #+#             */
-/*   Updated: 2026/02/08 12:29:10 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/15 14:37:35 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
+	if (!s || !c)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
