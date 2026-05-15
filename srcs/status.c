@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 11:12:09 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 17:00:17 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/15 15:55:17 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static const char	*get_error(t_status status)
 	const char	*data[] = {"Success", "Failure", "Bad argument",
 		"Too many arguments", "Not enough arguments", "Overflow", "Underflow",
 		"Division by zero", "Allocation failure", "Open failure",
-		"Is a directory", "Read failure", "Dup failure",
+		"Is a directory", "Read failure", "File is empty", "Dup failure",
 		"No such file or directory", "Permission denied"};
 
 	return (data[status]);

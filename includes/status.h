@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 11:17:39 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 16:59:35 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/15 15:54:59 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ typedef enum e_status
 	OPEN_FAILURE,
 	IS_DIRECTORY,
 	READ_FAILURE,
+	EMPTY_FILE,
 	DUP_FAILURE,
 	FILE_NOT_FOUND,
 	PERMISSION_ERROR,
