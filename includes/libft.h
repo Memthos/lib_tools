@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:16:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/15 15:27:09 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/17 13:55:21 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char		*ft_substr(char const *s, unsigned int start, size_t len);
 
 size_t		ft_intlen(int n);
 size_t		ft_strlen(const char *s);
+size_t		ft_array_len(void *array);
 
 void		ft_free_str(char **str);
 void		ft_free_tab(char ***tab);
