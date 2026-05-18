@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:16:56 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 16:18:14 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/18 14:56:55 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ double	ft_round(double nb, t_uint precision)
 		if (!isfinite(nb))
 		{
 			use_status(OVERFLOW);
+			print_status("ft_round");
 			return (0);
 		}
 		nb *= 10;

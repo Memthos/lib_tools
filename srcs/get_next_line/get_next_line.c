@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 16:04:35 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 15:49:18 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/18 15:06:40 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,13 @@
 
 int	get_line(char **str, char **buffer, const int break_pos)
 {
-	int		i;
-
-	*str = malloc(sizeof(char) * (break_pos + 1));
+	*str = ft_calloc(break_pos + 1, sizeof(char));
 	if (!*str)
 	{
-		use_status(ALLOCATION_FAILURE);
+		ft_free_str(buffer);
 		return (ALLOCATION_FAILURE);
 	}
-	i = 0;
-	while (i++ < break_pos)
-		(*str)[i - 1] = (*buffer)[i - 1];
-	(*str)[i] = '\0';
+	ft_strlcpy(*str, *buffer, break_pos + 1);
 	if (break_pos == (int)ft_strlen(*buffer))
 	{
 		ft_free_str(buffer);
@@ -34,7 +29,7 @@ int	get_line(char **str, char **buffer, const int break_pos)
 	if (clean_buffer(buffer, *str) != SUCCESS)
 	{
 		ft_free_str(str);
-		use_status(ALLOCATION_FAILURE);
+		ft_free_str(buffer);
 		return (ALLOCATION_FAILURE);
 	}
 	return (SUCCESS);
@@ -44,7 +39,7 @@ int	read_more(const int fd, char **buffer, int *read_len)
 {
 	char	*read_str;
 
-	read_str = malloc(sizeof(char) * (BUFFER_SIZE));
+	read_str = ft_calloc(BUFFER_SIZE, sizeof(char));
 	if (!read_str)
 	{
 		ft_free_str(buffer);
@@ -58,13 +53,13 @@ int	read_more(const int fd, char **buffer, int *read_len)
 			return (SUCCESS);
 		ft_free_str(buffer);
 		use_status(READ_FAILURE);
+		print_status("get_next_line");
 		return (READ_FAILURE);
 	}
 	if (buffer_update(buffer, &read_str, *read_len) == SUCCESS)
 		return (SUCCESS);
 	ft_free_str(buffer);
 	ft_free_str(&read_str);
-	use_status(ALLOCATION_FAILURE);
 	return (ALLOCATION_FAILURE);
 }
 
@@ -72,11 +67,10 @@ int	init_buffer(char **buffer)
 {
 	if (!*buffer)
 	{
-		*buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+		*buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 		if (!*buffer)
 		{
 			*buffer = NULL;
-			use_status(ALLOCATION_FAILURE);
 			return (ALLOCATION_FAILURE);
 		}
 		(*buffer)[0] = '\0';
@@ -103,10 +97,7 @@ char	*get_next_line(int fd)
 		if (check_linebreak(buffer, &break_pos, read_len) == SUCCESS)
 		{
 			if (get_line(&str, &buffer, break_pos) != SUCCESS)
-			{
-				ft_free_str(&buffer);
 				return (NULL);
-			}
 			break ;
 		}
 	}

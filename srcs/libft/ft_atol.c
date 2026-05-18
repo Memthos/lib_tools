@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 14:22:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 15:49:33 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/18 14:51:38 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,16 @@
 
 static t_status	check_overflow(int nb, int sign, int c)
 {
+	t_status	status;
+
+	status = SUCCESS;
 	if (nb * sign > (LONG_MAX - (c - '0')) / 10)
-	{
-		use_status(OVERFLOW);
-		return (OVERFLOW);
-	}
+		status = OVERFLOW;
 	else if (nb * sign < (LONG_MIN + (c - '0')) / 10)
-	{
-		use_status(UNDERFLOW);
-		return (UNDERFLOW);
-	}
-	return (SUCCESS);
+		status = UNDERFLOW;
+	use_status(status);
+	print_status("ft_atol");
+	return (status);
 }
 
 long	ft_atol(const t_string str)
@@ -39,6 +38,7 @@ long	ft_atol(const t_string str)
 	if (!str)
 	{
 		use_status(FAILURE);
+		print_status("ft_atol");
 		return (0);
 	}
 	while (ft_isspace(str[i]) == SUCCESS)

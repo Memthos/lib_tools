@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 16:01:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 16:56:20 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/18 14:58:08 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ double	vec_dot(const t_vec3 v1, const t_vec3 v2)
 	if (!isfinite(res))
 	{
 		use_status(OVERFLOW);
+		print_status("vec_dot");
 		return (0);
 	}
 	return (res);
@@ -35,6 +36,7 @@ t_vec3	vec_cross(const t_vec3 v1, const t_vec3 v2)
 	if (!isfinite(res.x) || !isfinite(res.y) || !isfinite(res.z))
 	{
 		use_status(OVERFLOW);
+		print_status("vec_cross");
 		return ((t_vec3){0.0, 0.0, 0.0});
 	}
 	return (res);

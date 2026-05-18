@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:58:35 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 16:56:11 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/18 14:57:53 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_vec3	vec_add(const t_vec3 v1, const t_vec3 v2)
 	if (!isfinite(res.x) || !isfinite(res.y) || !isfinite(res.z))
 	{
 		use_status(OVERFLOW);
+		print_status("vec_add");
 		return ((t_vec3){0.0, 0.0, 0.0});
 	}
 	return (res);
@@ -33,6 +34,7 @@ t_vec3	vec_sub(const t_vec3 v1, const t_vec3 v2)
 	if (!isfinite(res.x) || !isfinite(res.y) || !isfinite(res.z))
 	{
 		use_status(OVERFLOW);
+		print_status("vec_sub");
 		return ((t_vec3){0.0, 0.0, 0.0});
 	}
 	return (res);
@@ -46,6 +48,7 @@ t_vec3	vec_scale(const t_vec3 v1, const double lambda)
 	if (!isfinite(res.x) || !isfinite(res.y) || !isfinite(res.z))
 	{
 		use_status(OVERFLOW);
+		print_status("vec_scale");
 		return ((t_vec3){0.0, 0.0, 0.0});
 	}
 	return (res);
