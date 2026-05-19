@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/18 14:21:42 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/15 15:35:07 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/19 10:53:40 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ static void	free_to_index(char **split, size_t goal)
 		free(split[i++]);
 	free(split);
 }
-#include <stdio.h>
+
 char	**ft_split(const char *str, const char *set)
 {
 	char	**split;
