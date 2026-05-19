@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 15:58:06 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/18 15:00:10 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/19 10:52:18 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,10 @@ t_vec3	vec_normalize(const t_vec3 v1)
 	res = (t_vec3){v1.x / magnitude, v1.y / magnitude, v1.z / magnitude};
 	if (!isfinite(res.x) || !isfinite(res.y) || !isfinite(res.z))
 	{
-		use_status(OVERFLOW);
+		if (res.x < 0 || res.y < 0 || res.z < 0)
+			use_status(UNDERFLOW);
+		else
+			use_status(OVERFLOW);
 		print_status("vec_normalize");
 		return ((t_vec3){0.0, 0.0, 0.0});
 	}
