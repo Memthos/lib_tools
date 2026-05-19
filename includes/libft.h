@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 13:16:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/18 13:08:26 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/19 10:57:36 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <math.h>
 
 # include "status.h"
 # include "types.h"
 
 int			ft_atoi(const t_string str);
 long		ft_atol(const t_string str);
+double		ft_strtod(const t_string str, t_string *endptr);
 
 void		ft_bzero(void *s, size_t n);
 void		*ft_calloc(size_t nmemb, size_t size);
