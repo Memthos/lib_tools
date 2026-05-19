@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/19 10:42:23 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/19 10:56:22 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/19 15:10:42 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ double	ft_strtod(const t_string str, t_string *endptr)
 	}
 	if (str[i] == '.')
 		add_dot(&res, str, &i);
-	if (endptr)
+	if (endptr && str[i])
 		*endptr = &str[i];
 	return (res * sign);
 }
