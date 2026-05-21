@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 16:04:35 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/18 15:06:40 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/20 13:50:38 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,20 @@ int	read_more(const int fd, char **buffer, int *read_len)
 	}
 	*read_len = (int) read(fd, read_str, BUFFER_SIZE);
 	if (*read_len < 1)
+		ft_free_str(&read_str);
+	if (*read_len == 0 && (*buffer)[0] != '\0')
+		return (SUCCESS);
+	else if (*read_len < 1)
 	{
-		free(read_str);
-		if (*read_len == 0 && (*buffer)[0] != '\0')
-			return (SUCCESS);
 		ft_free_str(buffer);
+		if (*read_len == 0)
+			return (FAILURE);
 		use_status(READ_FAILURE);
 		print_status("get_next_line");
-		return (READ_FAILURE);
+		return (FAILURE);
 	}
 	if (buffer_update(buffer, &read_str, *read_len) == SUCCESS)
 		return (SUCCESS);
-	ft_free_str(buffer);
-	ft_free_str(&read_str);
 	return (ALLOCATION_FAILURE);
 }
 

@@ -31,7 +31,7 @@ static void	add_dot(double *res, const t_string str, size_t *i)
 	size_t	divider;
 
 	divider = 1;
-	i++;
+	++(*i);
 	while (ft_isdigit(str[*i]) == SUCCESS)
 	{
 		if (divider >= (size_t) - 1 / 10)

@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 16:05:10 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/18 14:47:59 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/20 13:46:14 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,16 @@ int	buffer_update(char **buffer, char **read_str, const int read_len)
 	buffer_len = ft_strlen(*buffer);
 	tmp = ft_calloc(buffer_len + 1, sizeof(char));
 	if (!tmp)
+	{
+		ft_free_str(buffer);
+		ft_free_str(read_str);
 		return (ALLOCATION_FAILURE);
+	}
 	ft_strmove(&tmp, buffer, 0, buffer_len);
 	*buffer = ft_calloc(buffer_len + read_len + 1, sizeof(char));
 	if (!(*buffer))
 	{
+		ft_free_str(read_str);
 		ft_free_str(&tmp);
 		return (ALLOCATION_FAILURE);
 	}
@@ -81,7 +86,6 @@ int	clean_buffer(char **buffer, const char *str)
 	tmp = ft_calloc(clean_buffer_size + 1, sizeof(char));
 	if (!tmp)
 		return (ALLOCATION_FAILURE);
-	tmp[clean_buffer_size] = '\0';
 	while (clean_buffer_size > 0 && buffer_size > 0)
 		tmp[clean_buffer_size-- - 1] = (*buffer)[buffer_size-- - 1];
 	free(*buffer);
