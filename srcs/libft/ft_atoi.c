@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 14:22:15 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/18 14:34:29 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/05/21 13:46:27 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ static t_status	check_overflow(int nb, int sign, int c)
 		status = OVERFLOW;
 	else if (nb * sign < (INT_MIN + (c - '0')) / 10)
 		status = UNDERFLOW;
-	use_status(status);
-	print_status("ft_atoi");
+	if (use_status(status) != SUCCESS)
+		print_status("ft_atoi");
 	return (status);
 }
 
