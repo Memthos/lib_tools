@@ -6,7 +6,7 @@
 /*   By: mperrine <mperrine@student.42angouleme.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 10:19:50 by mperrine          #+#    #+#             */
-/*   Updated: 2026/05/14 16:55:44 by mperrine         ###   ########.fr       */
+/*   Updated: 2026/06/03 14:38:36 by mperrine         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ double	vec_max(const t_vec3 v1);
 double	vec_squared_magnitude(t_vec3 v1);
 double	vec_magnitude(t_vec3 v1);
 t_vec3	vec_normalize(const t_vec3 v1);
+t_vec3	vec_rotate(t_vec3 v1, t_vec3 axis, double angle);
 
 #endif
