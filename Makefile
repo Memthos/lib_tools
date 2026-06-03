@@ -13,7 +13,7 @@ SRCS=ft_atoi.c ft_bzero.c ft_calloc.c ft_free_str.c ft_free_tab.c ft_isalnum.c \
 	conversions_bonus.c conversions_checks_bonus.c conversions_utils_bonus.c \
 	ft_printf_bonus.c ft_printf_utils_bonus.c maths_utils_bonus.c \
 	ft_round.c math_utils.c vec_add_sub_scale.c vec_dot_cross.c \
-	vec_magnitude.c vec_min_max.c vec_normalize.c \
+	vec_magnitude.c vec_min_max.c vec_normalize.c vec_rotate.c\
 	status.c
 
 OBJS=$(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
