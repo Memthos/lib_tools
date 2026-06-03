@@ -40,7 +40,7 @@ static void	add_dot(double *res, const t_string str, size_t *i)
 			print_status("ft_strtod");
 		}
 		divider *= 10;
-		*res += (str[(*i)++] - '0') / divider;
+		*res += (str[(*i)++] - '0') / (double)divider;
 		if (check_overflow(*res) == FAILURE)
 		{
 			*res = 0.0;
