@@ -14,7 +14,6 @@
 # define LIB_TOOLS_H
 
 # include "status.h"
-# include "math_ops.h"
 # include "types.h"
 # include "libft.h"
 # include "ft_printf_bonus.h"
