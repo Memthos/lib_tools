@@ -1,4 +1,4 @@
-VPATH=srcs:srcs/libft:srcs/ft_printf:srcs/get_next_line:srcs/math_ops
+VPATH=srcs:srcs/libft:srcs/ft_printf:srcs/get_next_line
 OBJS_DIR=objs/
 HEADERS=includes/
 SRCS=ft_atoi.c ft_bzero.c ft_calloc.c ft_free_str.c ft_free_tab.c ft_isalnum.c \
@@ -8,12 +8,10 @@ SRCS=ft_atoi.c ft_bzero.c ft_calloc.c ft_free_str.c ft_free_tab.c ft_isalnum.c \
 	ft_strchr.c ft_strcmp.c ft_strdup.c ft_string_tab_len.c ft_striteri.c \
 	ft_strjoin_sep.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c \
 	ft_strmapi.c ft_strncmp.c ft_strncpy.c ft_strnstr.c ft_strrchr.c \
-	ft_strtod.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
+	ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
 	get_next_line.c get_next_line_utils.c \
 	conversions_bonus.c conversions_checks_bonus.c conversions_utils_bonus.c \
 	ft_printf_bonus.c ft_printf_utils_bonus.c maths_utils_bonus.c \
-	ft_round.c math_utils.c vec_add_sub_scale.c vec_dot_cross.c \
-	vec_magnitude.c vec_min_max.c vec_normalize.c vec_rotate.c\
 	status.c
 
 OBJS=$(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
