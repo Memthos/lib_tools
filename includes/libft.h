@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include <math.h>
 
 # include "status.h"
 # include "types.h"
