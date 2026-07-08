@@ -14,7 +14,7 @@
 
 void	ft_putchar(char c, t_ft_printf *data)
 {
-	if (write(1, &c, 1) == -1)
+	if (write(data->fd, &c, 1) == -1)
 	{
 		data->status = FAILURE;
 		use_status(FAILURE);

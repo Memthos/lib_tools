@@ -37,12 +37,17 @@ typedef struct s_flags
 typedef struct s_ft_printf
 {
 	va_list		*args;
+	int			fd;
 	size_t		printed;
 	t_status	status;
 	t_flags		flags;
 }			t_ft_printf;
 
 int		ft_printf(const char *format, ...);
+int		ft_dprintf(int fd, const char *format, ...);
+
+void	print(t_ft_printf *data);
+int		conversion(const char *s, t_ft_printf *data, size_t *i);
 
 void	set_nb_prefix(char *s, long nb, t_ft_printf *data);
 int		get_hex_size(size_t nb);

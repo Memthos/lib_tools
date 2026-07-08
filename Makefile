@@ -11,7 +11,8 @@ SRCS=ft_atoi.c ft_bzero.c ft_calloc.c ft_free_str.c ft_free_tab.c ft_isalnum.c \
 	ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
 	get_next_line.c get_next_line_utils.c \
 	conversions_bonus.c conversions_checks_bonus.c conversions_utils_bonus.c \
-	ft_printf_bonus.c ft_printf_utils_bonus.c maths_utils_bonus.c \
+	ft_printf_bonus.c ft_printf_utils_bonus.c parsing_bonus.c \
+	maths_utils_bonus.c \
 	status.c
 
 OBJS=$(addprefix $(OBJS_DIR), $(SRCS:.c=.o))
