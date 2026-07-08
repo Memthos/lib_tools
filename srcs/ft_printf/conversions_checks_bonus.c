@@ -57,7 +57,7 @@ int	is_flag(char c)
 
 int	is_length(char c)
 {
-	if (c == '.' || ft_isdigit(c))
+	if (c == '.' || ft_isdigit(c) == SUCCESS)
 		return (SUCCESS);
 	return (FAILURE);
 }
