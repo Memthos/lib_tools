@@ -24,7 +24,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(FTPRINTF)
 	@ar -rcs $@ $^
-	@echo "Finished compiling libft"
+	@echo "Finished compiling lib_tools"
 
 $(OBJS_DIR)%.o: %.c | $(OBJS_DIR)
 	@$(CC) $(CFLAGS) -o $@ -c $<
@@ -34,12 +34,12 @@ $(OBJS_DIR):
 
 clean:
 	@rm -drf $(OBJS_DIR)
-	@echo "Cleaned libft object files"
+	@echo "Cleaned lib_tools object files"
 
 fclean:
 	@rm -f $(NAME)
 	@rm -drf $(OBJS_DIR)
-	@echo "Cleaned libft"
+	@echo "Cleaned lib_tools"
 
 re: fclean all
 
